@@ -6,17 +6,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         CalculateProfitOfBankDeposit calculateProfitOfBankDeposit = new CalculateProfitOfBankDeposit();
-        System.out.println("Interest rate: ");
+
+        System.out.println("Year interest rate: ");
         String interestRate = getPlayerInput(scanner);
-        System.out.println("Number of months: ");
-        String numberOfMonths = getPlayerInput(scanner);
+
+        System.out.println("Investment time (in years): ");
+        String numberOfYears = getPlayerInput(scanner);
+
+
+        System.out.println("Number of capitalisation per year(1=year, 2=half year, 4=quarter of year, 12=monthly): ");
+        String capitalisationCount = getPlayerInput(scanner);
+
         System.out.println("Deposit: ");
         String deposit = getPlayerInput(scanner);
 
-        System.out.println(calculateProfitOfBankDeposit.returnOnInvestment(interestRate,numberOfMonths,deposit));
-
-
-    }
+        System.out.println(calculateProfitOfBankDeposit.returnOnInvestment(interestRate,capitalisationCount,numberOfYears,deposit));
+   }
 
 
 
